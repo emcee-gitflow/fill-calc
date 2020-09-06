@@ -12,7 +12,7 @@ processed, allowing adjustments to the new values.
 Fill command syntax:
 /fill -75 92 -864 -117 92 -900 air
 
-Last Update: 08-26-2020 09:53 CST
+Last Update: 09-06-2020 04:26 CST
 """
 
 # Assign variables to be used for indexing in coordinate lists
@@ -53,7 +53,7 @@ def adj_coord(f_group, s_group, expand=True):
     """
     while True:
         try:
-            adjust_by = int(input("Blocks to adjust by: ").strip())
+            adjust_by = int(input("Blocks to adjust by: "))
         except ValueError:
             print("\nError: you must enter a whole number.")
         else:
@@ -122,7 +122,7 @@ def main():
             continue
 
         try:
-            height_adj = int(input("Adjust height by: ").strip())
+            height_adj = int(input("Adjust height by: "))
         except ValueError:
             print("\nError: "
                   "invalid entry. Height adjustment has been set to 0.")
