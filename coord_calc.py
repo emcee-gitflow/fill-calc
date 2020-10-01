@@ -12,7 +12,7 @@ processed, allowing adjustments to the new values.
 Fill command syntax:
 /fill -75 92 -864 -117 92 -900 air
 
-Last Update: 09-06-2020 04:26 CST
+Last Update: 2020-09-30 09:19 CDT
 """
 
 # Assign variables to be used for indexing in coordinate lists
@@ -98,8 +98,7 @@ def main():
 
     while True:
         # display coordinates to be processed in loop body
-        print("\nCoordinates: "
-              f"{fg[X]} {fg[Y]} {fg[Z]} {sg[X]} {sg[Y]} {sg[Z]}")
+        print("\nCoordinates:", *fg, *sg)
 
         option = input("Expand(e), Contract(c), Neither(n), Reset(r), "
                        "Quit(q): ").strip().lower()
@@ -150,8 +149,7 @@ def main():
                     break
 
         # display results of calculations
-        print("\nResults: "
-              f"{nfg[X]} {nfg[Y]} {nfg[Z]} {nsg[X]} {nsg[Y]} {nsg[Z]}")
+        print("\nResults:", *nfg, *nsg)
 
         while True:
             replace = input("Replace active coordinates? "
