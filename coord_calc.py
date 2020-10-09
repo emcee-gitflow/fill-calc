@@ -12,14 +12,14 @@ processed, allowing adjustments to the new values.
 Fill command syntax:
 /fill -75 92 -864 -117 92 -900 air
 
-Last Update: 2020-09-30 09:19 CDT
+Last Update: 2020-10-08 07:49 CDT
 """
 
 # Assign variables to be used for indexing in coordinate lists
 X, Y, Z = 0, 1, 2
 
 
-def set_coord():
+def set_coord() -> tuple[list[int], list[int]]:
     """
     Prompt user for two sets of coordinates, convert input to lists of ints.
     Valid input consists of whole numbers separated by commas; spaces are
@@ -40,11 +40,13 @@ def set_coord():
                 print("\nError: coordinates must have three values each.")
 
 
-def adj_coord(f_group, s_group, expand=True):
+def adj_coord(f_group: list[int],
+              s_group: list[int],
+              expand: bool = True) -> tuple[list[int], list[int]]:
     """
-    Given two lists of coordinates(ints), compare values and perform
-    necessary operations to expand or contract the area determined by the
-    coordinates. Build and return lists holding resulting coordinate values.
+    Given two lists of coordinates, compare values and perform necessary
+    operations to expand or contract the area determined by the coordinates.
+    Build and return lists holding resulting coordinate values.
 
     :param f_group: first list of coordinates.
     :param s_group: second list of coordinates.
